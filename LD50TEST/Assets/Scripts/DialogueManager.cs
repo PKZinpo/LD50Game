@@ -8,17 +8,32 @@ public class DialogueManager : MonoBehaviour {
     [SerializeField] private Text nameText;
     [SerializeField] private Text dialogueText;
     [SerializeField] private Animator dialogueBox;
+    [SerializeField] private GameObject continueText;
+    [SerializeField] private float textTypeSpeed;
     
     private Queue<string> names;
     private Queue<string> sentences;
 
 
-    void Start() {
+    private void Start() {
         names = new Queue<string>();
         sentences = new Queue<string>();
     }
 
+    private void Update() {
+        if (continueText.activeSelf) {
+            if (Input.GetKeyDown(KeyCode.E)) {
+                DisplayNextSentence();
+            }
+        }
+    }
+
     public void StartDialogue(Dialogue dialogue) {
+
+        continueText.SetActive(false);
+
+        nameText.text = "";
+        dialogueText.text = "";
 
         dialogueBox.SetTrigger("DialogueIn");
 
@@ -32,11 +47,11 @@ public class DialogueManager : MonoBehaviour {
             names.Enqueue(dialogueName);
         }
 
-        DisplayNextSentence();
-
     }
-    private void DisplayNextSentence() {
-        
+    public void DisplayNextSentence() {
+
+        continueText.SetActive(false);
+
         if (sentences.Count == 0) {
             EndDialogue();
             return;
@@ -53,9 +68,9 @@ public class DialogueManager : MonoBehaviour {
         dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray()) {
             dialogueText.text += letter;
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(textTypeSpeed);
         }
-
+        continueText.SetActive(true);
     }
     private void EndDialogue() {
 
