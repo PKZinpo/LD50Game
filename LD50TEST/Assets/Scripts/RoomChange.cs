@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class RoomChange : MonoBehaviour, ITrigger {
     public void Trigger() {
-        
-        Camera.main.gameObject.GetComponent<CameraController>().MoveCameraToPosition(name.Substring(2));
+        string objName = name.Substring(2);
+        Camera.main.gameObject.GetComponent<CameraController>().MoveCameraToPosition(objName);
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().ChangePosition(objName);
     }
 }
