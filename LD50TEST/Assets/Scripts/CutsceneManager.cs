@@ -1,28 +1,30 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CutsceneManager : MonoBehaviour {
 
-    private bool introCutscene;
+    public event EventHandler<OnTriggerCutsceneEventArgs> OnTriggerCutscene;
+
+    public class OnTriggerCutsceneEventArgs : EventArgs {
+        public string cutsceneName;
+    }
+
     private bool ladderCutscene;
     private bool flashbackCutscene;
     private bool fishingCutscene;
     private bool endingCutscene;
 
     void Start() {
-        
+        GameManager.noPlayerMove = true;
     }
 
-    void Update() {
-        
-    }
-
-    private void StartIntroCutscene() {
-
+    public void StartCutscene(string csName) {
+        OnTriggerCutscene?.Invoke(this, new OnTriggerCutsceneEventArgs { cutsceneName = csName });
     }
     private void StartLadderCutscene() {
-
+        
     }
     private void FlashbackCutscene() {
 

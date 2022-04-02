@@ -7,6 +7,9 @@ TagManager:
   - CameraPositions
   - SpawnPositions
   - PressF
+  - MainCanvas
+  - CutsceneManager
+  - StoryManager
   layers:
   - Default
   - TransparentFX

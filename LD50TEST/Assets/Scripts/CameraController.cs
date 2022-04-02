@@ -8,6 +8,7 @@ public class CameraController : MonoBehaviour {
 
     private GameObject player;
     private GameObject cameraPositions;
+    private Animator anim;
 
     private void Awake() {
         cameraPositions = GameObject.FindGameObjectWithTag("CameraPositions");
@@ -28,4 +29,19 @@ public class CameraController : MonoBehaviour {
         }
     }
 
+    public void ToBasement() {
+        anim.SetTrigger("ToBasement");
+    }
+    public void FromMainRoom() {
+        anim.SetTrigger("FromMain");
+    }
+    public void ToMainRoom() {
+        anim.SetTrigger("ToMain");
+    }
+    public void FromLadder() {
+        anim.SetTrigger("FromLadder");
+    }
+    public void ToLadder() {
+        anim.SetTrigger("ToLadder");
+    }
 }

@@ -7,6 +7,6 @@ public class GameManager : MonoBehaviour {
 
     public static bool isInMainSequence = false;
 
-    
+    public static bool noPlayerMove = false;
 
 }

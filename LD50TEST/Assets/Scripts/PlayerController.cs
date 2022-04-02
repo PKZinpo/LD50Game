@@ -7,19 +7,19 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private float mainMovementSpeed;
     [SerializeField] private float kidMovementSpeed;
 
-    private GameManager gm;
-
     private bool inTrigger = false;
     private ITrigger triggerObject;
     private GameObject pressF;
 
     private void Awake() {
-        //gm = GameObject.Find
         pressF = GameObject.FindGameObjectWithTag("PressF");
         pressF.SetActive(false);
     }
 
     private void Update() {
+
+        if (GameManager.noPlayerMove) return;
+
         float movement;
         if (GameManager.isInMainSequence) {
             movement = Input.GetAxisRaw("Horizontal") * mainMovementSpeed * Time.deltaTime;
@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour {
 
         if (inTrigger && Input.GetKeyDown(KeyCode.F)) {
             triggerObject.Trigger();
+            pressF.SetActive(false);
         }
     }
     public void ChangePosition(string posName) {

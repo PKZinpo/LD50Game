@@ -10,12 +10,14 @@ public class DialogueManager : MonoBehaviour {
     [SerializeField] private Animator dialogueBox;
     [SerializeField] private GameObject continueText;
     [SerializeField] private float textTypeSpeed;
-    
+
+    private MainCanvasManager mcm;
     private Queue<string> names;
     private Queue<string> sentences;
 
 
     private void Start() {
+        mcm = GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<MainCanvasManager>();
         names = new Queue<string>();
         sentences = new Queue<string>();
     }
@@ -73,8 +75,6 @@ public class DialogueManager : MonoBehaviour {
         continueText.SetActive(true);
     }
     private void EndDialogue() {
-
         dialogueBox.SetTrigger("DialogueOut");
-
     }
 }
