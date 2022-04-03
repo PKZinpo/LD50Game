@@ -6,7 +6,12 @@ public class PlayerController : MonoBehaviour {
 
     [SerializeField] private float mainMovementSpeed;
     [SerializeField] private float kidMovementSpeed;
+    [SerializeField] private GameObject kid;
+    [SerializeField] private GameObject dad;
 
+    private GameObject currentSprite;
+    private Animator currentAnimator;
+    private bool toRight = false;
     private bool inTrigger = false;
     private ITrigger triggerObject;
     private GameObject pressF;
@@ -14,6 +19,15 @@ public class PlayerController : MonoBehaviour {
     private void Awake() {
         pressF = GameObject.FindGameObjectWithTag("PressF");
         pressF.SetActive(false);
+
+        if (kid.activeSelf) {
+            currentSprite = kid;
+            currentAnimator = kid.GetComponent<Animator>();
+        }
+        else {
+            currentSprite = dad;
+            currentAnimator = dad.GetComponent<Animator>();
+        }
     }
 
     private void Update() {
@@ -27,14 +41,28 @@ public class PlayerController : MonoBehaviour {
         else {
             movement = Input.GetAxisRaw("Horizontal") * kidMovementSpeed * Time.deltaTime;
         }
+
+        if (movement > 0f && !toRight) {
+            Debug.Log("RIGHT");
+            FlipPlayer();
+        }
+        else if(movement < 0f && toRight) {
+            Debug.Log("LefT");
+            FlipPlayer();
+        }
         
         //float movement = movementSpeed * Time.deltaTime;
         transform.position += new Vector3(movement, 0f, 0f);
+        currentAnimator.SetBool("IsWalking", movement != 0f);
 
         if (inTrigger && Input.GetKeyDown(KeyCode.F)) {
             triggerObject.Trigger();
             pressF.SetActive(false);
         }
+    }
+    private void FlipPlayer() {
+        toRight = !toRight;
+        currentSprite.transform.localScale = new Vector3(-1f * currentSprite.transform.localScale.x, currentSprite.transform.localScale.y, currentSprite.transform.localScale.z);
     }
     public void ChangePosition(string posName) {
 

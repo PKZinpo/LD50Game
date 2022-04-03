@@ -8,7 +8,8 @@ public class RoomChange : MonoBehaviour, ITrigger {
 
     public void Trigger() {
         if (name.Contains("Cutscene")) {
-
+            GameManager.inCutscene = true;
+            GameObject.FindGameObjectWithTag("StoryManager").GetComponent<StoryManager>().SetDialogue(GetComponent<DialogueTrigger>().dialogue);
             GameObject.FindGameObjectWithTag("CutsceneManager").GetComponent<CutsceneManager>().StartCutscene(cutsceneName);
             return;
         }

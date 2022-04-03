@@ -10,6 +10,9 @@ TagManager:
   - MainCanvas
   - CutsceneManager
   - StoryManager
+  - Trapdoor
+  - Father
+  - TransitionText
   layers:
   - Default
   - TransparentFX

@@ -11,12 +11,14 @@ public class DialogueManager : MonoBehaviour {
     [SerializeField] private GameObject continueText;
     [SerializeField] private float textTypeSpeed;
 
+    private StoryManager sm;
     private MainCanvasManager mcm;
     private Queue<string> names;
     private Queue<string> sentences;
 
 
     private void Start() {
+        sm = GameObject.FindGameObjectWithTag("StoryManager").GetComponent<StoryManager>();
         mcm = GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<MainCanvasManager>();
         names = new Queue<string>();
         sentences = new Queue<string>();
@@ -76,5 +78,8 @@ public class DialogueManager : MonoBehaviour {
     }
     private void EndDialogue() {
         dialogueBox.SetTrigger("DialogueOut");
+        if (!sm.IsStoryDone()) {
+            sm.NextSceneInStory();
+        }
     }
 }

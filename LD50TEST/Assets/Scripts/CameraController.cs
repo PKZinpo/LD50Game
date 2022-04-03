@@ -13,6 +13,8 @@ public class CameraController : MonoBehaviour {
     private void Awake() {
         cameraPositions = GameObject.FindGameObjectWithTag("CameraPositions");
         player = GameObject.FindGameObjectWithTag("Player");
+        anim = GetComponent<Animator>();
+        anim.enabled = false;
     }
 
     private void Update() {
@@ -30,18 +32,35 @@ public class CameraController : MonoBehaviour {
     }
 
     public void ToBasement() {
+        anim.enabled = true;
         anim.SetTrigger("ToBasement");
     }
     public void FromMainRoom() {
+        anim.enabled = true;
         anim.SetTrigger("FromMain");
     }
     public void ToMainRoom() {
+        anim.enabled = true;
         anim.SetTrigger("ToMain");
     }
     public void FromLadder() {
+        anim.enabled = true;
         anim.SetTrigger("FromLadder");
     }
+    public void FromLadderTran() {
+        anim.enabled = true;
+        anim.SetTrigger("FromLadderTran");
+    }
     public void ToLadder() {
+        anim.enabled = true;
         anim.SetTrigger("ToLadder");
+    }
+    public void ToIdle() {
+        anim.enabled = false;
+        anim.SetTrigger("ToIdle");
+        NextStory();
+    }
+    public void NextStory() {
+        GameObject.FindGameObjectWithTag("StoryManager").GetComponent<StoryManager>().NextSceneInStory();
     }
 }

@@ -9,4 +9,6 @@ public class GameManager : MonoBehaviour {
 
     public static bool noPlayerMove = false;
 
+    public static bool inCutscene = false;
+
 }
