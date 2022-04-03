@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour {
     private bool inTrigger = false;
     private ITrigger triggerObject;
     private GameObject pressF;
+    private bool failed = false;
+    private int fails = 0;
 
     private void Awake() {
         pressF = GameObject.FindGameObjectWithTag("PressF");
@@ -83,6 +85,29 @@ public class PlayerController : MonoBehaviour {
                 transform.position = spawnPositions.transform.GetChild(i).position;
             }
         }
+    }
+    public void DoAction() {
+        currentAnimator.SetTrigger("Action");
+    }
+    public void IsActionFailed(bool action) {
+        failed = action;
+    }
+    public void TriggerTrip() {
+        if (failed) {
+            currentAnimator.SetTrigger("Failed");
+            fails++;
+        }
+        else {
+            currentAnimator.SetTrigger("Success");
+        }
+    }
+    private void FailsCheck() {
+        if (fails >= 3) {
+
+        }
+    }
+    private void Restart() {
+
     }
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.GetComponent<ITrigger>() != null) {

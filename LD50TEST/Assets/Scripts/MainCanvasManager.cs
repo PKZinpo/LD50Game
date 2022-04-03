@@ -24,10 +24,6 @@ public class MainCanvasManager : MonoBehaviour {
         action.SetActive(false);
     }
 
-    void Update() {
-
-    }
-
     public void ToCutscene(object sender, CutsceneManager.OnTriggerCutsceneEventArgs e) {
         cutsceneName = e.cutsceneName;
         cutscene.SetTrigger("ToCutscene");
@@ -81,5 +77,31 @@ public class MainCanvasManager : MonoBehaviour {
     public void StartCutscene() {
         GameObject.FindGameObjectWithTag("StoryManager").GetComponent<StoryManager>().StartStory(cutsceneName);
     }
+    public void ChangeActionKey(KeyCode keycode) {
+        action.SetActive(true);
+        switch (keycode) {
 
+            case KeyCode.Q:
+                action.GetComponent<Animator>().SetTrigger("Q");
+                break;
+
+            case KeyCode.W:
+                action.GetComponent<Animator>().SetTrigger("W");
+                break;
+
+            case KeyCode.E:
+                action.GetComponent<Animator>().SetTrigger("E");
+                break;
+
+            case KeyCode.F:
+                action.GetComponent<Animator>().SetTrigger("F");
+                break;
+
+
+        }
+
+    }
+    public void DisableActionKey() {
+        action.SetActive(false);
+    }
 }
