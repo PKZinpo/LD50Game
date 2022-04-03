@@ -13,6 +13,7 @@ TagManager:
   - Trapdoor
   - Father
   - TransitionText
+  - Door
   layers:
   - Default
   - TransparentFX

@@ -76,10 +76,37 @@ public class StoryManager : MonoBehaviour {
                 break;
 
             case "Flashback":
+                Debug.Log(index);
                 if (index == 0) {
                     mcm.GradientOutUp();
                     cc.ToMainRoom();
                     index++;
+                }
+                else if (index == 1) {
+                    FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+                    index++;
+                }
+                else if (index == 2) {
+                    GameObject.FindGameObjectWithTag("Door").GetComponent<Animator>().SetTrigger("DoorOpen");
+                    index++;
+                }
+                else if (index == 3) {
+                    mcm.GradientInUp();
+                    cc.FromMainRoom();
+                    index++;
+                }
+                else if (index == 4) {
+                    mcm.GradientOutDown();
+                    cc.ToBasement();
+                    index++;
+                }
+                else if (index == 5) {
+                    FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+                    index++;
+                }
+                else if (index == 6) {
+                    mcm.GradientInDownTransition();
+
                 }
                 break;
 
@@ -103,15 +130,21 @@ public class StoryManager : MonoBehaviour {
                 break;
 
             case "Flashback":
-
+                if (index >= 7) {
+                    return true;
+                }
                 break;
 
             case "Fishing":
-
+                if (index >= 7) {
+                    return true;
+                }
                 break;
 
             case "Ending":
-
+                if (index >= 7) {
+                    return true;
+                }
                 break;
         }
         return false;
