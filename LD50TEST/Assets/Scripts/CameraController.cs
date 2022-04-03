@@ -23,6 +23,7 @@ public class CameraController : MonoBehaviour {
 
     public void MoveCameraToPosition(string posName) {
         for (int i = 0; i < cameraPositions.transform.childCount; i++) {
+            Debug.Log(cameraPositions.transform.GetChild(i).name);
             if (cameraPositions.transform.GetChild(i).name == posName) {
                 Debug.Log($"[CameraController] Moved to {cameraPositions.transform.GetChild(i).position}");
                 transform.position = cameraPositions.transform.GetChild(i).position + cameraOffset;

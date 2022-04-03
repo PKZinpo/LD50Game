@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class StoryManager : MonoBehaviour {
 
@@ -76,7 +77,6 @@ public class StoryManager : MonoBehaviour {
                 break;
 
             case "Flashback":
-                Debug.Log(index);
                 if (index == 0) {
                     mcm.GradientOutUp();
                     cc.ToMainRoom();
@@ -106,12 +106,34 @@ public class StoryManager : MonoBehaviour {
                 }
                 else if (index == 6) {
                     mcm.GradientInDownTransition();
-
+                    Debug.Log("[StoryManager] Flashback cutscene done");
+                    ResetVariables();
                 }
                 break;
 
             case "Fishing":
-
+                Debug.Log(index);
+                if (index == 0) {
+                    //cc.MoveCameraToPosition("Fishing");
+                    //mcm.FadeOut();
+                    //index++;
+                }
+                else if (index == 1) {
+                    FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+                    index++;
+                }
+                else if (index == 2) {
+                    GameObject.FindGameObjectWithTag("Bell").GetComponent<Bell>().PlayStoryBell();
+                    index++;
+                }
+                else if (index == 3) {
+                    FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+                    index++;
+                }
+                else if (index == 4) {
+                    mcm.FadeIn("SmallHome");
+                    index++;
+                }
                 break;
 
             case "Ending":

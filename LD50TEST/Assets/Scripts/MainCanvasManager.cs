@@ -72,7 +72,7 @@ public class MainCanvasManager : MonoBehaviour {
     }
     public void FadeTrigger() {
         Camera.main.gameObject.GetComponent<CameraController>().MoveCameraToPosition(fadeTrigger);
-        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().ChangePosition(fadeTrigger);
+        if (fadeTrigger.Contains("Basement")) GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().ChangePosition(fadeTrigger);
         FadeOut();
         
     }
