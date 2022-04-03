@@ -11,4 +11,6 @@ public class GameManager : MonoBehaviour {
 
     public static bool inCutscene = false;
 
+    public static bool isInFinal = false;
+
 }

@@ -114,9 +114,10 @@ public class StoryManager : MonoBehaviour {
             case "Fishing":
                 Debug.Log(index);
                 if (index == 0) {
-                    //cc.MoveCameraToPosition("Fishing");
-                    //mcm.FadeOut();
-                    //index++;
+                    cc.MoveCameraToPosition("Fishing");
+                    mcm.GradientOutUp();
+                    Invoke("NextSceneInStory", 1f);
+                    index++;
                 }
                 else if (index == 1) {
                     FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
@@ -132,12 +133,33 @@ public class StoryManager : MonoBehaviour {
                 }
                 else if (index == 4) {
                     mcm.FadeIn("SmallHome");
+                    GameObject.FindGameObjectWithTag("SmallHome").GetComponent<SmallHome>().NextStory();
                     index++;
+                }
+                else if (index == 5) {
+                    FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+                    index++;
+                }
+                else if (index == 6) {
+                    mcm.GradientInDownTransition();
+                    Invoke("NextSceneInStory", 1f);
+                    index++;
+                }
+                else if (index == 7) {
+                    GameManager.inCutscene = false;
+                    GameManager.isInFinal = true;
+                    mcm.GradientOutUp();
+                    mcm.FromCutscene();
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().ToFinal();
+                    Debug.Log("[StoryManager] Fishing cutscene done");
+                    ResetVariables();
                 }
                 break;
 
             case "Ending":
+                if (index == 0) {
 
+                }
                 break;
         }
     }
@@ -158,7 +180,7 @@ public class StoryManager : MonoBehaviour {
                 break;
 
             case "Fishing":
-                if (index >= 7) {
+                if (index >= 8) {
                     return true;
                 }
                 break;

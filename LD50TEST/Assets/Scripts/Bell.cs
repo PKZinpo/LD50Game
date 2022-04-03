@@ -17,4 +17,14 @@ public class Bell : MonoBehaviour {
     private void NextStory() {
         GameObject.FindGameObjectWithTag("StoryManager").GetComponent<StoryManager>().NextSceneInStory();
     }
+
+    public void PlayDoubleBell() {
+        Invoke("PlayTransitionBell", 2f);
+        Invoke("PlayTransitionBell", 4f);
+        Invoke("NextStory", 6f);
+    }
+
+    private void PlayTransitionBell() {
+        FindObjectOfType<AudioManager>().Play("Bell");
+    }
 }

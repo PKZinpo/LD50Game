@@ -24,6 +24,11 @@ public class MainAction : MonoBehaviour, IMainTrigger {
         if (Input.GetKeyDown(input)) {
             MainTriggerLeave();
         }
+        else if (Input.anyKeyDown) {
+            MainTriggerLeave();
+            Debug.Log("WRONG KEY");
+        }
+        
     }
 
 

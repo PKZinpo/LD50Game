@@ -18,7 +18,8 @@ public class CameraController : MonoBehaviour {
     }
 
     private void Update() {
-        //transform.position = player.transform.position + cameraOffset;
+        if (!GameManager.isInFinal) return;
+        transform.position = player.transform.position + cameraOffset;
     }
 
     public void MoveCameraToPosition(string posName) {

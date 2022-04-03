@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour {
     [SerializeField] private float kidMovementSpeed;
     [SerializeField] private GameObject kid;
     [SerializeField] private GameObject dad;
+    [SerializeField] private GameObject finalPosition;
 
     private GameObject currentSprite;
     private Animator currentAnimator;
@@ -43,22 +44,31 @@ public class PlayerController : MonoBehaviour {
         }
 
         if (movement > 0f && !toRight) {
-            Debug.Log("RIGHT");
             FlipPlayer();
         }
         else if(movement < 0f && toRight) {
-            Debug.Log("LefT");
             FlipPlayer();
         }
         
-        //float movement = movementSpeed * Time.deltaTime;
+        if (GameManager.isInFinal) movement = mainMovementSpeed * Time.deltaTime;
         transform.position += new Vector3(movement, 0f, 0f);
-        currentAnimator.SetBool("IsWalking", movement != 0f);
+
+        if (!GameManager.isInFinal) currentAnimator.SetBool("IsWalking", movement != 0f);
 
         if (inTrigger && Input.GetKeyDown(KeyCode.F)) {
             triggerObject.Trigger();
             pressF.SetActive(false);
         }
+    }
+    public void ToFinal() {
+        ChangePlayer();
+        transform.position = finalPosition.transform.position;
+    }
+    public void ChangePlayer() {
+        kid.gameObject.SetActive(false);
+        dad.gameObject.SetActive(true);
+        currentSprite = dad;
+        currentAnimator = dad.GetComponent<Animator>();
     }
     private void FlipPlayer() {
         toRight = !toRight;

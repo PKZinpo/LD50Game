@@ -11,6 +11,7 @@ public class MainCanvasManager : MonoBehaviour {
     [SerializeField] private Animator dialogueBox;
     [SerializeField] private Animator gradient;
     [SerializeField] private Text transitionText;
+    [SerializeField] private GameObject action;
 
     private CutsceneManager cm;
     private string fadeTrigger;
@@ -20,6 +21,7 @@ public class MainCanvasManager : MonoBehaviour {
         cm = GameObject.FindGameObjectWithTag("CutsceneManager").GetComponent<CutsceneManager>();
 
         cm.OnTriggerCutscene += ToCutscene;
+        action.SetActive(false);
     }
 
     void Update() {
