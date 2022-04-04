@@ -7,4 +7,7 @@ public class Trapdoor : MonoBehaviour {
     public void ToLadderRoom() {
         GameObject.FindGameObjectWithTag("StoryManager").GetComponent<StoryManager>().NextSceneInStory();
     }
+    public void SoundEffect() {
+        FindObjectOfType<AudioManager>().Play("Door");
+    }
 }

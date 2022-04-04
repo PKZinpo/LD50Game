@@ -17,6 +17,12 @@ TagManager:
   - TransitionText2
   - Bell
   - SmallHome
+  - BlackSmog
+  - Dad Sitting
+  - Grandpa Sitting
+  - OpeningTrapDoor
+  - SleepingDad
+  - AudioManager
   layers:
   - Default
   - TransparentFX

@@ -9,4 +9,8 @@ public class DoorOpen : MonoBehaviour {
         sm.SetDialogue(GetComponent<DialogueTrigger>().dialogue);
         sm.NextSceneInStory();
     }
+    public void SoundEffect() {
+        FindObjectOfType<AudioManager>().Play("Door");
+        FindObjectOfType<AudioManager>().Play("Track1");
+    }
 }

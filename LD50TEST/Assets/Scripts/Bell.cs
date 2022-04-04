@@ -21,10 +21,14 @@ public class Bell : MonoBehaviour {
     public void PlayDoubleBell() {
         Invoke("PlayTransitionBell", 2f);
         Invoke("PlayTransitionBell", 4f);
-        Invoke("NextStory", 6f);
+        Invoke("StartEnding", 8f);
     }
 
     private void PlayTransitionBell() {
         FindObjectOfType<AudioManager>().Play("Bell");
+    }
+
+    public void StartEnding() {
+        GameObject.Find("Ending").GetComponent<Ending>().StartStory();
     }
 }

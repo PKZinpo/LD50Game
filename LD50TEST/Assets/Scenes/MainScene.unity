@@ -150,8 +150,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 47325872}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.509, y: 1.0946, z: 2.7118914}
-  m_LocalScale: {x: 0.47126448, y: 0.16442113, z: 1}
+  m_LocalPosition: {x: 9.0698, y: 1.092, z: 2.7118914}
+  m_LocalScale: {x: 0.17501555, y: 0.16442113, z: 1}
   m_Children: []
   m_Father: {fileID: 262546138}
   m_RootOrder: 6
@@ -384,6 +384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f050d4c414b89cf40ada8f1e3ec0b045, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sleepingBag: {fileID: 21300000, guid: d746ea1effd81b5489c8e81d68d0af48, type: 3}
 --- !u!4 &70410708
 Transform:
   m_ObjectHideFlags: 0
@@ -396,7 +397,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &80562798
 GameObject:
@@ -920,7 +921,7 @@ Transform:
   - {fileID: 1437702931}
   - {fileID: 1647365613}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &267335710
 GameObject:
@@ -985,7 +986,7 @@ MonoBehaviour:
   dialogueText: {fileID: 1050882933}
   dialogueBox: {fileID: 2079610407}
   continueText: {fileID: 1700748461}
-  textTypeSpeed: 0.01
+  textTypeSpeed: 0.02
 --- !u!4 &286717183
 Transform:
   m_ObjectHideFlags: 0
@@ -998,7 +999,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &338062911
 GameObject:
@@ -1031,7 +1032,7 @@ Transform:
   - {fileID: 1351986716}
   - {fileID: 2052043970}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &340438286
 GameObject:
@@ -1577,7 +1578,7 @@ GameObject:
   - component: {fileID: 493679064}
   m_Layer: 0
   m_Name: SleepingDad
-  m_TagString: Untagged
+  m_TagString: SleepingDad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1675,7 +1676,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &500718815
 GameObject:
@@ -1786,6 +1787,108 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &506067607
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 506067608}
+  - component: {fileID: 506067609}
+  - component: {fileID: 506067610}
+  m_Layer: 0
+  m_Name: OpeningTrapDoor
+  m_TagString: OpeningTrapDoor
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &506067608
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506067607}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.7741, y: 4.1464, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1646925948}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &506067609
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506067607}
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -414504793
+  m_SortingLayer: 2
+  m_SortingOrder: 1
+  m_Sprite: {fileID: -2657258276796616165, guid: 1487bd94e6554fb4bbbfd58c39ab7197, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.64, y: 0.64}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!95 &506067610
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506067607}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e8c7d3919857faa48874677630374c77, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &512770482
 GameObject:
   m_ObjectHideFlags: 0
@@ -2057,7 +2160,7 @@ GameObject:
   - component: {fileID: 542169592}
   m_Layer: 0
   m_Name: AudioManager
-  m_TagString: Untagged
+  m_TagString: AudioManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2081,6 +2184,42 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: Door
+    clip: {fileID: 8300000, guid: cbe8089d377ca5047b67404610d27922, type: 3}
+    volume: 0.05
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Shed
+    clip: {fileID: 8300000, guid: a8376fa436f9fa14ab37e7e2928ed0d7, type: 3}
+    volume: 0.05
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Violin
+    clip: {fileID: 8300000, guid: 67bef1edcfb71a0449036baf0b7cad16, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Track1
+    clip: {fileID: 8300000, guid: 677da21894b494640a282c9d234c880c, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Track2
+    clip: {fileID: 8300000, guid: 2f7453d1377b3614b81a18d04897e7b7, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Track3
+    clip: {fileID: 8300000, guid: 6d6673b5edc3770459948d412c7c25e5, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
 --- !u!4 &542169593
 Transform:
   m_ObjectHideFlags: 0
@@ -2093,7 +2232,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &567481500
 GameObject:
@@ -2627,7 +2766,7 @@ RectTransform:
   - {fileID: 983561599}
   - {fileID: 1339789493}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2837,8 +2976,8 @@ MonoBehaviour:
   dialogue:
     name:
     - Kid
-    - Guardian
-    - Guardian
+    - Ash
+    - Ash
     sentences:
     - Dad.. why are they hitting the bell?
     - But.. this can't be.. the smog came a few days ago..
@@ -2867,7 +3006,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &975811623
 GameObject:
@@ -2910,7 +3049,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &983561598
 GameObject:
@@ -2966,10 +3105,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name:
-    - Son
-    - Guardian
-    - Son
-    - Guardian
+    - Kid
+    - Ash
+    - Kid
+    - Ash
     sentences:
     - Dad, I caught a big one!
     - Good good, now put it in the bucket
@@ -3160,7 +3299,7 @@ Transform:
   - {fileID: 1075276361}
   - {fileID: 577327138}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1007202690
 GameObject:
@@ -3189,8 +3328,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1007202690}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.7402, y: 1.0725, z: 2.7118914}
-  m_LocalScale: {x: 0.32671487, y: 0.17434435, z: 1}
+  m_LocalPosition: {x: -7.8002, y: 1.0725, z: 2.7118914}
+  m_LocalScale: {x: 0.20664716, y: 0.17434435, z: 1}
   m_Children: []
   m_Father: {fileID: 262546138}
   m_RootOrder: 0
@@ -3390,7 +3529,7 @@ Transform:
   - {fileID: 500718816}
   - {fileID: 80562799}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1042437490
 GameObject:
@@ -3661,7 +3800,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1112814396}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.61, y: 4.57, z: 0}
+  m_LocalPosition: {x: 2.722, y: 4.691, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1646925948}
@@ -3778,7 +3917,7 @@ Transform:
   - {fileID: 1008378272}
   - {fileID: 1256493986}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1170724584
 GameObject:
@@ -3877,7 +4016,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1181158048}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.021, y: 4.525, z: 0}
+  m_LocalPosition: {x: 3.105, y: 4.698, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1116118975}
@@ -3910,7 +4049,7 @@ MonoBehaviour:
   m_ShadowVolumeIntensity: 0
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
-  m_PointLightInnerRadius: 0
+  m_PointLightInnerRadius: 0.03144324
   m_PointLightOuterRadius: 1.17
   m_PointLightDistance: 3
   m_PointLightQuality: 1
@@ -4273,6 +4412,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1303387778
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1303387779}
+  m_Layer: 0
+  m_Name: Main
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1303387779
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1303387778}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.75, y: 4.7, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1643036326}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1339789492
 GameObject:
   m_ObjectHideFlags: 0
@@ -4395,8 +4564,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1347895182}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.4772, y: 1.0582, z: 2.7118914}
-  m_LocalScale: {x: 0.31558618, y: 0.14552188, z: 1}
+  m_LocalPosition: {x: 4.4029, y: 1.0582, z: 2.7118914}
+  m_LocalScale: {x: 0.16707133, y: 0.14552188, z: 1}
   m_Children: []
   m_Father: {fileID: 262546138}
   m_RootOrder: 4
@@ -4711,7 +4880,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1363721397}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.042, y: 4.525, z: 0}
+  m_LocalPosition: {x: 4.978, y: 4.649, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1116118975}
@@ -4864,7 +5033,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1437702930}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.926, y: 1.104, z: 2.7118914}
+  m_LocalPosition: {x: 9.646, y: 1.093, z: 2.7118914}
   m_LocalScale: {x: 0.16006857, y: 0.16908748, z: 1}
   m_Children: []
   m_Father: {fileID: 262546138}
@@ -5158,10 +5327,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name:
-    - Dad
+    - Ash
     - Grandpa
     - Grandpa
-    - Dad
+    - Ash
     sentences:
     - When are we going to go fishing again dad?
     - Now now, we can go again tomorrow
@@ -5231,7 +5400,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1524208970
 GameObject:
@@ -5275,7 +5444,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1524208973
 MonoBehaviour:
@@ -5291,13 +5460,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name:
-    - Guardian
+    - Ash
     - Villager
-    - Guardian
-    - Guardian
+    - Ash
+    - Ash
     - Kid
-    - Guardian
-    - Guardian
+    - Ash
+    - Ash
     - Kid
     sentences:
     - Hey, would you mind if we camped out in your bunker, our home is a little far
@@ -5807,12 +5976,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name:
-    - Guardian
-    - Guardian
+    - Ash
+    - Ash
+    - Ash
+    - Ash
+    - Ash
+    - Ash
+    - Ash
+    - Ash
+    - Ash
+    - Ash
+    - Ash
+    - Ash
+    - Ash
+    - Ash
+    - Ash
+    - Ash
+    - Ash
+    - Ash
+    - Ash
+    - Ash
     sentences:
     - The guy that collapsed at our door, there was this weird black smoke coming
       out of him
     - Among that, we heard faint screams from the village
+    - People running away from what looked like a gigantic black smoke cloud
+    - Your grandpa then revealed that he had a secret bunker
+    - Which is what we're in right now
+    - Explained that this was his hiding spot for when pillagers come to the village
+    - So I helped him pry the trapdoor open, it wasn't used in quite a while
+    - But as we were trying to get it open, we saw the black smoke starting to creep
+      in the house
+    - We finally got the trapdoor open very slightly, enough for only one of us to
+      fit through
+    - That was when he shoved me in..
+    - Banged my head on the way down, I got knocked out cold for a good while
+    - After I came to, I didn't see your grandpa anywhere in the bunker
+    - I carefully opened the trapdoor
+    - Saw no more black smoke, but...
+    - Next to the trapdoor, there he was.. lifeless... his body took the black color
+      of the smoke clouds...
+    - ...
+    - Look, anyways, we're fine now, we have precautionary measures, shelters in
+      each home
+    - Just know that if you hear the bell ring once, go hide
+    - If you hear it ring twice, you're safe and sound
+    - Got it kid? Get some sleep, we'll wake up and then we can head back out again
 --- !u!1 &1643036325
 GameObject:
   m_ObjectHideFlags: 0
@@ -5844,8 +6053,9 @@ Transform:
   - {fileID: 2058722080}
   - {fileID: 1658490564}
   - {fileID: 253155114}
+  - {fileID: 1303387779}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1646257516
 GameObject:
@@ -5878,7 +6088,7 @@ Transform:
   - {fileID: 855499113}
   - {fileID: 340438287}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1646925947
 GameObject:
@@ -5912,8 +6122,12 @@ Transform:
   - {fileID: 1626494828}
   - {fileID: 1112814397}
   - {fileID: 825121081}
+  - {fileID: 506067608}
+  - {fileID: 2064046195}
+  - {fileID: 1863178625}
+  - {fileID: 2027378140}
   m_Father: {fileID: 0}
-  m_RootOrder: 17
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1646985794
 GameObject:
@@ -5956,7 +6170,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1647365612
 GameObject:
@@ -5976,7 +6190,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1647365613
 Transform:
   m_ObjectHideFlags: 0
@@ -6377,6 +6591,88 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1863178624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1863178625}
+  - component: {fileID: 1863178626}
+  m_Layer: 0
+  m_Name: GrandpaSitting
+  m_TagString: Grandpa Sitting
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1863178625
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863178624}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 3.998, y: 4.306, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1646925948}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1863178626
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863178624}
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -414504793
+  m_SortingLayer: 2
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: a24dfb6fa54f33b449e2891558407e0e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.54, y: 0.32}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1886749530
 GameObject:
   m_ObjectHideFlags: 0
@@ -6404,8 +6700,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1886749530}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.6641, y: 1.0645, z: 2.7118914}
-  m_LocalScale: {x: 0.2981154, y: 0.15825196, z: 1}
+  m_LocalPosition: {x: -1.736, y: 1.0645, z: 2.7118914}
+  m_LocalScale: {x: 0.15439397, y: 0.15825196, z: 1}
   m_Children: []
   m_Father: {fileID: 262546138}
   m_RootOrder: 2
@@ -6928,7 +7224,7 @@ GameObject:
   - component: {fileID: 2027378140}
   - component: {fileID: 2027378139}
   m_Layer: 0
-  m_Name: Father PH
+  m_Name: Father
   m_TagString: Father
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6941,7 +7237,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2027378138}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -6974,7 +7270,7 @@ SpriteRenderer:
   m_SortingLayerID: -414504793
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ab2cc8132ca35de44a2490f1106f7cd1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e32ea945f94bd3a41a7fe87f708bddfc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6993,11 +7289,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2027378138}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.229, y: -0.208, z: 0}
+  m_LocalPosition: {x: 4.56, y: -0.289, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 1646925948}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2052043969
 GameObject:
@@ -7137,11 +7433,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
     name:
-    - Dad
+    - Ash
     - Kid
-    - Dad
+    - Ash
     - Kid
-    - Dad
+    - Ash
     sentences:
     - I told you not to go out there, it's dangerous
     - You still haven't told me what is going on out there yet
@@ -7178,6 +7474,88 @@ Transform:
   m_Father: {fileID: 1643036326}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2064046194
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2064046195}
+  - component: {fileID: 2064046196}
+  m_Layer: 0
+  m_Name: DadSitting
+  m_TagString: Dad Sitting
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2064046195
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064046194}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.287, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1646925948}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &2064046196
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2064046194}
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -414504793
+  m_SortingLayer: 2
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 2222b3d8f20e36b4484ac6504fbd0791, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.54, y: 0.32}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &2079610403
 GameObject:
   m_ObjectHideFlags: 0
@@ -7289,6 +7667,71 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78dc531abface984c8e74ee17d0e0fae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2090287771
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2090287774}
+  - component: {fileID: 2090287773}
+  - component: {fileID: 2090287772}
+  m_Layer: 0
+  m_Name: Ending
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2090287772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090287771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 869b195b6cafc9f4ea5e945d63e5b0c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2090287773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090287771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5454160599067244bac2c5ddfa4c1c1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+    name:
+    - Kid
+    - Kid
+    - Kid
+    sentences:
+    - dad?........
+    - You said you would be fine.....
+    - .........dad....................
+--- !u!4 &2090287774
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090287771}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.078315094, y: -0.22184558, z: 57.94543}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2125030312966149640
 GameObject:
   m_ObjectHideFlags: 0
@@ -7370,7 +7813,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &2125030312966149643
 Animator:

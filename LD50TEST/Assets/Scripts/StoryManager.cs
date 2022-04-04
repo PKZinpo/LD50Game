@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class StoryManager : MonoBehaviour {
 
+    [SerializeField] private Sprite sleepingBag;
+
     private CameraController cc;
     private MainCanvasManager mcm;
 
@@ -12,6 +14,8 @@ public class StoryManager : MonoBehaviour {
 
     private int index;
     private string sceneName;
+
+    private AudioSource track;
 
     private void Awake() {
         cc = Camera.main.GetComponent<CameraController>();
@@ -43,17 +47,21 @@ public class StoryManager : MonoBehaviour {
                 }
                 else if (index == 1) {
                     GameObject.FindGameObjectWithTag("Trapdoor").GetComponent<Animator>().SetTrigger("TrapdoorCutscene");
+                    FindObjectOfType<AudioManager>().Play("Violin");
                     index++;
                 }
                 else if (index == 2) {
                     mcm.GradientInUp();
                     cc.FromMainRoom();
-                    GameObject spawnPositions = GameObject.FindGameObjectWithTag("SpawnPositions");
-                    for (int i = 0; i < spawnPositions.transform.childCount; i++) {
-                        if (spawnPositions.transform.GetChild(i).name.Substring(5) == "BasementLadder") {
-                            GameObject.FindGameObjectWithTag("Father").transform.position = spawnPositions.transform.GetChild(i).position;
-                        }
-                    }
+                    GameObject.FindGameObjectWithTag("Father").GetComponent<SpriteRenderer>().enabled = true;
+                    GameObject.FindGameObjectWithTag("Dad Sitting").GetComponent<SpriteRenderer>().enabled = true;
+                    GameObject.FindGameObjectWithTag("SleepingDad").GetComponent<SpriteRenderer>().sprite = sleepingBag;
+                    //GameObject spawnPositions = GameObject.FindGameObjectWithTag("SpawnPositions");
+                    //for (int i = 0; i < spawnPositions.transform.childCount; i++) {
+                    //    if (spawnPositions.transform.GetChild(i).name.Substring(5) == "BasementLadder") {
+                    //        GameObject.FindGameObjectWithTag("Father").transform.position = spawnPositions.transform.GetChild(i).position;
+                    //    }
+                    //}
                     index++;
                 }
                 else if (index == 3) {
@@ -71,6 +79,7 @@ public class StoryManager : MonoBehaviour {
                     index++;
                 }
                 else if (index == 6) {
+                    GameObject.FindGameObjectWithTag("Grandpa Sitting").GetComponent<SpriteRenderer>().enabled = true;
                     Debug.Log("[StoryManager] Ladder cutscene done");
                     ResetVariables();
                 }
@@ -106,13 +115,13 @@ public class StoryManager : MonoBehaviour {
                 }
                 else if (index == 6) {
                     mcm.GradientInDownTransition();
+                    GameObject.FindGameObjectWithTag("Grandpa Sitting").GetComponent<SpriteRenderer>().enabled = false;
                     Debug.Log("[StoryManager] Flashback cutscene done");
                     ResetVariables();
                 }
                 break;
 
             case "Fishing":
-                Debug.Log(index);
                 if (index == 0) {
                     cc.MoveCameraToPosition("Fishing");
                     mcm.GradientOutUp();
@@ -129,6 +138,7 @@ public class StoryManager : MonoBehaviour {
                 }
                 else if (index == 3) {
                     FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+                    FindObjectOfType<AudioManager>().Play("Track2");
                     index++;
                 }
                 else if (index == 4) {
@@ -158,10 +168,31 @@ public class StoryManager : MonoBehaviour {
 
             case "Ending":
                 if (index == 0) {
-
+                    mcm.LongFadeOut();
+                    GameObject cameraPositions = GameObject.FindGameObjectWithTag("CameraPositions");
+                    for (int i = 0; i < cameraPositions.transform.childCount; i++) {
+                        if (cameraPositions.transform.GetChild(i).name == "Main") {
+                            Camera.main.transform.position = cameraPositions.transform.GetChild(i).position + new Vector3(0f, 0f, -10f);
+                            break;
+                        }
+                    }
+                    index++;
+                }
+                else if (index == 1) {
+                    FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+                    FindObjectOfType<AudioManager>().Play("Track3");
+                    index++;
+                }
+                else if (index == 2) {
+                    mcm.GradientInUp();
+                    Debug.Log("[StoryManager] Ending cutscene done");
                 }
                 break;
         }
+    }
+
+    public void SetAudioSource(AudioSource source) {
+        track = source;
     }
 
     public bool IsStoryDone() {

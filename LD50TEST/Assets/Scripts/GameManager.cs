@@ -13,4 +13,6 @@ public class GameManager : MonoBehaviour {
 
     public static bool isInFinal = false;
 
+    public static bool ending = false;
+
 }

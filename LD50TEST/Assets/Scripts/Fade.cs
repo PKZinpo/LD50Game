@@ -8,4 +8,8 @@ public class Fade : MonoBehaviour {
         GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<MainCanvasManager>().FadeTrigger();
     }
 
+    public void NextStory() {
+        GameObject.FindGameObjectWithTag("StoryManager").GetComponent<StoryManager>().NextSceneInStory();
+    }
+
 }

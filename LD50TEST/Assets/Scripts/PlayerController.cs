@@ -44,23 +44,25 @@ public class PlayerController : MonoBehaviour {
         else {
             movement = Input.GetAxisRaw("Horizontal") * kidMovementSpeed * Time.deltaTime;
         }
-
-        if (movement > 0f && !toRight) {
-            FlipPlayer();
-        }
-        else if(movement < 0f && toRight) {
-            FlipPlayer();
-        }
-        
+                
         if (GameManager.isInFinal) movement = mainMovementSpeed * Time.deltaTime;
         transform.position += new Vector3(movement, 0f, 0f);
 
-        if (!GameManager.isInFinal) currentAnimator.SetBool("IsWalking", movement != 0f);
 
         if (inTrigger && Input.GetKeyDown(KeyCode.F)) {
             triggerObject.Trigger();
             pressF.SetActive(false);
+            movement = 0f;
         }
+
+        if (GameManager.isInFinal) return;
+        if (movement > 0f && !toRight) {
+            FlipPlayer();
+        }
+        else if (movement < 0f && toRight) {
+            FlipPlayer();
+        }
+        if (!GameManager.isInFinal && !GameManager.ending) currentAnimator.SetBool("IsWalking", movement != 0f);
     }
     public void ToFinal() {
         ChangePlayer();
@@ -94,20 +96,25 @@ public class PlayerController : MonoBehaviour {
     }
     public void TriggerTrip() {
         if (failed) {
-            currentAnimator.SetTrigger("Failed");
+            currentAnimator.SetTrigger("Fail");
             fails++;
         }
         else {
             currentAnimator.SetTrigger("Success");
         }
+        FailsCheck();
     }
     private void FailsCheck() {
-        if (fails >= 3) {
-
+        if (fails >= 1) {
+            currentAnimator.SetTrigger("Die");
         }
     }
-    private void Restart() {
-
+    public void Restart() {
+        GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<MainCanvasManager>().FadeIn(true);
+        fails = 0;
+    }
+    public void RestartAnimator() {
+        currentAnimator.SetTrigger("Restart");
     }
     private void OnTriggerEnter2D(Collider2D collision) {
         if (collision.GetComponent<ITrigger>() != null) {

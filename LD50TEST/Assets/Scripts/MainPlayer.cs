@@ -13,4 +13,14 @@ public class MainPlayer : MonoBehaviour {
     public void TriggerAction() {
         pc.TriggerTrip();
     }
+    public void ToEnding() {
+        GameManager.isInFinal = false;
+        //GameObject.FindGameObjectWithTag("OpeningTrapDoor").GetComponent<SpriteRenderer>().enabled = true;
+        GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<MainCanvasManager>().FadeIn(false);
+        GameObject.FindGameObjectWithTag("Bell").GetComponent<Bell>().PlayDoubleBell();
+    }
+
+    public void Restart() {
+        pc.Restart();
+    }
 }

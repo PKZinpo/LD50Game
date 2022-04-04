@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MainCanvasManager : MonoBehaviour {
 
@@ -39,10 +40,21 @@ public class MainCanvasManager : MonoBehaviour {
         GameManager.noPlayerMove = true;
         fadeTrigger = room;
     }
+    public void FadeIn(bool isRestart) {
+        if (!isRestart) GameManager.ending = true;
+        fade.SetTrigger("FadeIn");
+        fadeTrigger = "Restart";
+    }
     public void FadeOut() {
         fade.SetTrigger("FadeOut");
         if (!GameManager.inCutscene) GameManager.noPlayerMove = false;
+        else if (fadeTrigger == "Restart") {
+
+        }
         else GameObject.FindGameObjectWithTag("StoryManager").GetComponent<StoryManager>().NextSceneInStory();
+    }
+    public void LongFadeOut() {
+        fade.SetTrigger("LongFadeOut");
     }
     public void DialogueIn() {
         fade.SetTrigger("DialogueIn");
@@ -60,6 +72,7 @@ public class MainCanvasManager : MonoBehaviour {
         gradient.SetTrigger("GradInUp");
     }
     public void GradientOutDown() {
+        if (GameManager.ending) SceneManager.LoadScene("EndingScene");
         gradient.SetTrigger("GradOutDown");
     }
     public void GradientOutUp() {
@@ -69,8 +82,13 @@ public class MainCanvasManager : MonoBehaviour {
         gradient.SetTrigger("ToIdle");
     }
     public void FadeTrigger() {
+        if (GameManager.ending) return;
         Camera.main.gameObject.GetComponent<CameraController>().MoveCameraToPosition(fadeTrigger);
         if (fadeTrigger.Contains("Basement")) GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().ChangePosition(fadeTrigger);
+        if (fadeTrigger.Contains("Restart")) {
+            GameObject.FindGameObjectWithTag("Player").transform.position = GameObject.Find("PlayerOutsidePosition").transform.position;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().RestartAnimator();
+        }
         FadeOut();
         
     }
