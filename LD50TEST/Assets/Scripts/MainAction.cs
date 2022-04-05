@@ -19,7 +19,7 @@ public class MainAction : MonoBehaviour, IMainTrigger {
         GameObject.FindGameObjectWithTag("MainCanvas").GetComponent<MainCanvasManager>().DisableActionKey();
         Time.timeScale = 1f;
         inTrigger = false;
-        if (!pressedKey) GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().IsActionFailed(false);
+        if (!pressedKey) GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>().IsActionFailed(true);
     }
 
     public void Update() {
